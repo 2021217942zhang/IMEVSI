@@ -56,17 +56,21 @@ Vimeo90K:
 ```shell
 python benchmark/Vimeo_sequence.py
 ```
-Xiph:
+Xiph(you need to modify down_scale=1.0 to down_scale=0.5 in benchmark/Xiph_sequence.py):
 ```shell
 python benchmark/Xiph_sequence.py --path /path/to/Xiph_dataset --number 122/126/168
 ```
-GOPRO, YouTube and Davis:
+GOPRO, YouTube and Davis_480p:
 ```shell
-python benchmark/sequence_test.py --path /path/to/(GOPRO/YouTube/Davis) --number 122/126/168 --save_path ./results/
+python benchmark/sequence_test.py --path /path/to/(GOPRO/YouTube/Davis_480p) --number 122/126/168 --save_path ./results/
 ```
-GOPRO, YouTube and Davis using online learning:
+GOPRO, YouTube and Davis_480p using online learning:
 ```shell
-python benchmark/online_sequence_test.py --path /path/to/(GOPRO/YouTube/Davis) --number 122/126/168 --save_path ./results/
+python benchmark/online_sequence_test.py --path /path/to/(GOPRO/YouTube/Davis_480p) --number 122/126/168 --save_path ./results/
+```
+If you want to test DAVIS_1080p, you need to modify down_scale=1.0 to down_scale=0.5 in benchmark/sequence_test.py to reduce GPU memory usage.:
+```shell
+python benchmark/sequence_test.py --path /path/to/Davis_1080p --number 122/126/168 --save_path ./results/
 ```
 /path/to/(GOPRO/YouTube/Davis) should be organized as:
 ```text
